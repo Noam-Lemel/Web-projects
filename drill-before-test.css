@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;
+}
+.list-container{
+    min-height: 10rem;
+    width: 25rem;
+    border: 5px solid black;
+    background: lightblue;
+    padding: 10px;
+}
+.mission-box{
+    min-width: 1rem;
+    min-height:1rem;
+    word-break: break-all;
+    margin-right: 10px;
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+.end{
+    text-decoration: line-through;
+    background: gray;
+}

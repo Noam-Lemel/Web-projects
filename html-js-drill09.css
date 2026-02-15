@@ -1,0 +1,12 @@
+*{
+    box-sizing: border-box;
+}
+input{
+    display: block;
+}
+.hidding{
+    display: none;
+}
+.exist{
+    display: block;
+}

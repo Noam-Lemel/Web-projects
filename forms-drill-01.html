@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form - drill 01</title>
+    <link rel="stylesheet" href="./forms-drill-01.css">
+</head>
+<body>
+    <form action="./selectors.html" method="get">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="enter your name" required/>
+        <label for="age">Age</label>
+        <input type="number" name="age" id="age" placeholder="enter your age"/>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="enter your email" required/>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="enter your password" required/>
+        <label for="city">City</label>
+        <select name="city" id="city">
+            <option value="Tel-Aviv">Tel-Aviv</option>
+            <option value="Jaffa">Jaffa</option>
+            <option value="Netanye">Netanye</option>
+        </select>
+        <div>
+            <input class="inline" type="checkbox" name="terms" id="terms" required/>
+            <label class="inline" for="terms">I confirm the terms</label>
+        </div>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

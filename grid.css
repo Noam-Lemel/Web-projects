@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+}
+.grid-container{
+    width: 70vw;
+    min-height: 70vh;
+    outline: 3px solid  black;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    grid-template-columns: 10% 20% 30% 40%;
+}
+.box{
+    padding: 5px;
+}
+.blue{
+      background: blue;
+}
+.green{
+    background: green;
+}
+.red{
+    background: red;
+}
+.yellow{
+    background: yellow;
+}

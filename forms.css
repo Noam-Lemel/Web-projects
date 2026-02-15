@@ -1,0 +1,11 @@
+input{
+    display:block;
+    padding: 5px;
+    margin: 10px;
+}
+button{
+    display: block;
+}
+.inline-block{
+    display: inline;
+}

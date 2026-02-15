@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+}
+.board{
+    width: 80vh;
+    height: 80vh;
+    outline: 5px solid black;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(8,1fr);
+}
+.black,.white{
+     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.black{
+    background: black;
+}
+.white{
+    background: white;
+
+}
+.red-piece{
+    background: red;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+}
+.white-piece{
+    background: white;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    outline: 3px solid black;
+}

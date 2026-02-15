@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+.board{
+    height: 70vh;
+    width: 70vh;
+    margin: 20px auto;
+    outline: 5px solid black;
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(8,1fr);
+    background: brown;
+}
+.black{
+    background: black;
+}
+.white{
+    background: white;
+}
