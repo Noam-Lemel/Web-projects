@@ -6,7 +6,7 @@ const myForEach=(arr,callback)=>{
     }
 }
 let arrString='';
-myForEach(arr,(el,i)=>{ען
+myForEach(arr,(el,i)=>{
     arrString+=`${i}:${el}  `;
 })
 console.log('myForEach: ',arrString);
