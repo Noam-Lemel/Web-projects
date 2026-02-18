@@ -40,8 +40,10 @@ const getOpositArray=(arr)=>{
     return result;
 }
 console.log(getOpositArray([1,2,3]));
-const getOpositArrayRecutsive=(arr,num=arr.length)=>{
-    
-    if(num===0) return arr[0];
-    
+const getOpositArrayRecutsive=(arr,num=(arr.length-1),result=[])=>{
+    result.push(arr[num]);
+    if(num===0) return result;
+    getOpositArrayRecutsive(arr,num-1,result);
+    return result;
 }
+console.log(getOpositArrayRecutsive([1,2,3]));
