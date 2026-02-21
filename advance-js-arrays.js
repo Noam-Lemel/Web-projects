@@ -48,3 +48,21 @@ const getOpositArrayRecutsive=(arr)=>{
 
 }
 console.log(getOpositArrayRecutsive([1,2,3]));
+
+//drill 04
+const mySplice=(arr,index,deleteNum,...rest)=>{
+    let result=[...arr];
+    if(index>result.length) return result.concat(rest);
+    if(deleteNum==null||rest.length===0){
+       return result.slice(0,index);
+    }
+    if(deleteNum===0)
+        return result.slice(0,index).concat(rest,result.slice(index));
+    result=result.slice(0,index).concat(rest,result.slice(index+deleteNum))
+    return result;
+}
+console.log(mySplice([1,2,3,4,5,6,7,8,9,10],3,4,40,50,60,70));
+console.log(mySplice([1,2,3,4,5,6,7,8,9,10],11,15,40,50,60,70));
+console.log(mySplice([1,2,3,4,5,6,7,8,9,10],3,undefined,40,50,60,70));
+console.log(mySplice([1,2,3,4,5,6,7,8,9,10],3,0,40,50,60,70));
+console.log(mySplice([1,2,3,4,5,6,7,8,9,10],3,4));
