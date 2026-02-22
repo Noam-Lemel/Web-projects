@@ -93,12 +93,14 @@ const isPrimeNumber=(number)=>{
     return true;
 }
 console.log('prime numbers : ',hundredArr.filter(isPrimeNumber));
+//my Recutsive
 const isPrimeNumberRecutsive=(number,devider=2)=>{
     if(number<2) return false;  
     if(devider===number) return true;
     return (number%devider===0)? false :isPrimeNumberRecutsive(number,(devider+1));
 }
 console.log('prime numbers : ',hundredArr.filter((number)=>isPrimeNumberRecutsive(number)));
+//Arie's Recutsive
 const isPrimeNumberRecutsive2=(number,i,arr,...rest)=>{
     if(number<2) return false;
     const devider = rest.length === 0 ? (number-1) : rest[0];
