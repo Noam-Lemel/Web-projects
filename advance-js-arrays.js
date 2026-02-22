@@ -108,3 +108,12 @@ const isPrimeNumberRecutsive2=(number,i,arr,...rest)=>{
     return (number%devider===0)? false :isPrimeNumberRecutsive2(number,i,arr,(devider-1));
 }
 console.log('prime numbers : ',hundredArr.filter(isPrimeNumberRecutsive2));
+
+//drill 07
+const myMap=(arr,callback)=>{
+    const result=[];
+    for(let i=0;i<arr.length;i++)
+        result.push(callback(arr[i]));
+    return result;
+}
+console.log(myMap([2,4,6],num=>num**2));
