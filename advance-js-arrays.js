@@ -87,9 +87,22 @@ for(let i=1;i<=100;i++)
     hundredArr.push(i);
 const isPrimeNumber=(number)=>{
     if(number===1) return false;
-    for(let i=2;i<number;i++){
-        if(number%i===0) return false;
+    for(let devider=2;devider<number;devider++){
+        if(number%devider===0) return false;
     }
     return true;
 }
-console.log(hundredArr.filter(isPrimeNumber));
+console.log('prime numbers : ',hundredArr.filter(isPrimeNumber));
+const isPrimeNumberRecutsive=(number,devider=2)=>{
+    if(number<2) return false;  
+    if(devider===number) return true;
+    return (number%devider===0)? false :isPrimeNumberRecutsive(number,(devider+1));
+}
+console.log('prime numbers : ',hundredArr.filter((number)=>isPrimeNumberRecutsive(number)));
+const isPrimeNumberRecutsive2=(number,i,arr,...rest)=>{
+    if(number<2) return false;
+    const devider = rest.length === 0 ? (number-1) : rest[0];
+    if(devider<2) return true;
+    return (number%devider===0)? false :isPrimeNumberRecutsive2(number,i,arr,(devider-1));
+}
+console.log('prime numbers : ',hundredArr.filter(isPrimeNumberRecutsive2));
