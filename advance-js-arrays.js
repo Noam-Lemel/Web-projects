@@ -66,3 +66,30 @@ console.log(mySplice([1,2,3,4,5,6,7,8,9,10],11,15,40,50,60,70));
 console.log(mySplice([1,2,3,4,5,6,7,8,9,10],3,undefined,40,50,60,70));
 console.log(mySplice([1,2,3,4,5,6,7,8,9,10],3,0,40,50,60,70));
 console.log(mySplice([1,2,3,4,5,6,7,8,9,10],3,4));
+
+// drill 05
+const myFilter=(arr,callback)=>{
+    let result=[];
+    for(let i=0;i<arr.length;i++){
+    if(callback(arr[i]))
+        result.push(arr[i]);
+    }
+    return result;
+}
+console.log(myFilter([1,2,3,4],(num)=>{
+    if(num%2===0) return true;
+    return false;
+}))
+
+//drill 06
+const hundredArr=[];
+for(let i=1;i<=100;i++)
+    hundredArr.push(i);
+const isPrimeNumber=(number)=>{
+    if(number===1) return false;
+    for(let i=2;i<number;i++){
+        if(number%i===0) return false;
+    }
+    return true;
+}
+console.log(hundredArr.filter(isPrimeNumber));
