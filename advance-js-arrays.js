@@ -140,3 +140,15 @@ const myReduce=(arr,callback,initialValue)=>{
     return result;
 }
 console.log(myReduce([1,2,3,4],(result,el)=> result**el,2));
+
+//drill 10
+const obgReducer=(result,arr)=>{
+    result[arr[0]]=arr[1];
+    return result;
+}
+const arrObj=[
+    ['a',1],
+    ['b',2],
+    ['c',3]
+]
+console.log(arrObj.reduce(obgReducer,{}));
