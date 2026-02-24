@@ -129,3 +129,14 @@ const sortLetters2=(el2,el1)=>{
     return el2.toLowerCase()>el1.toLowerCase()?-1:1;
 }
 console.log(['a','b','A','i','c','z','d'].sort(sortLetters2));
+
+//drill 09 
+const myReduce=(arr,callback,initialValue)=>{
+    let index=initialValue==null?1:0;
+    let result=initialValue==null?arr[0]:initialValue;
+    for(let i=index;i<arr.length;i++){
+        result=callback(result,arr[i]);
+    }
+    return result;
+}
+console.log(myReduce([1,2,3,4],(result,el)=> result**el,2));
