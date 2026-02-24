@@ -117,3 +117,15 @@ const myMap=(arr,callback)=>{
     return result;
 }
 console.log(myMap([2,4,6],num=>num**2));
+
+//drill 08
+const sortLetters=(el2,el1)=>{
+    return el1.localeCompare(el2);
+}
+console.log(['a','b','A','i','c','z','d'].sort(sortLetters));
+
+const sortLetters2=(el2,el1)=>{
+    if(el2===el1) return 0;
+    return el2.toLowerCase()>el1.toLowerCase()?-1:1;
+}
+console.log(['a','b','A','i','c','z','d'].sort(sortLetters2));
