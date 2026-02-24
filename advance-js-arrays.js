@@ -134,8 +134,8 @@ console.log(['a','b','A','i','c','z','d'].sort(sortLetters2));
 const myReduce=(arr,callback,initialValue)=>{
     let index=initialValue==null?1:0;
     let result=initialValue==null?arr[0]:initialValue;
-    for(let i=index;i<arr.length;i++){
-        result=callback(result,arr[i]);
+    for(;index<arr.length;index++){
+        result=callback(result,arr[index]);
     }
     return result;
 }
