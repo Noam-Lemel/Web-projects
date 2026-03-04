@@ -63,6 +63,43 @@ const myIndexOf2=(str,strSearched,position=0)=>{
     }
 return -1;
 }
-strOut="HHHHHGGFDaaac";
+strOut="HHHHHGGFDaaacknvknavaac";
 strIn="aac";
 console.log(myIndexOf2(strOut,strIn));
+
+//drill 03
+//my Fixed solution
+const myLastIndexOf=(str,strSearched,position=str.length-1)=>{
+    for(let i=position;i>=0;i--){
+        for(let j=0;j<strSearched.length;j++){
+            if(str[i+j]!==strSearched[j]) break;
+            if(j===strSearched.length-1) return i;
+        }
+    }
+    return -1;
+}
+strOut="HHHHHGGFDaaacknvknavaac";
+strIn="aac";
+console.log(myLastIndexOf(strOut,strIn));
+
+//Arie's Solution
+    const myLastIndexOf2=(str,strSearched,position=0)=>{
+        let i2=strSearched.length-1;
+        let savedIndex;
+        for(let i=str.length-1;i>=position;i--){
+            if(i2===strSearched.length-1)
+                savedIndex=i;
+            if(str[i]!==strSearched[i2]) {
+                i=savedIndex;
+                i2=strSearched.length-1;
+                continue;
+            }
+            if(i2===0) return i;
+            i2--
+        }
+    return -1;
+    }
+strOut="ggg aac aax";
+strIn="aac";
+console.log(myLastIndexOf2(strOut,strIn));
+
