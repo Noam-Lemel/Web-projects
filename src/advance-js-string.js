@@ -30,3 +30,11 @@ return false;
 let strOut="aaac";
 let strIn="aac";
 console.log(myIncludes2(strOut,strIn));
+
+//drill 02
+const myIndexOf=(str,strSearched,position=0)=>{
+    for(let i=position;i<str.length-strSearched.length;i++){
+        
+    }
+
+}
