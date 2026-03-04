@@ -103,3 +103,17 @@ strOut="ggg aac aax";
 strIn="aac";
 console.log(myLastIndexOf2(strOut,strIn));
 
+//drill 04
+const mySlice=(str,startIndex=0,endIndex=str.length)=>{
+    let result='';
+    if(startIndex>str.length-1)return result;
+    endIndex=endIndex>str.length?str.length:endIndex;
+    for(let i=startIndex;i<endIndex;i++)
+        result+=str[i];
+    return result;
+}
+console.log(mySlice("my name is noam",3,7));
+console.log("my name is noam".slice(3,7));
+
+//drill 05
+
