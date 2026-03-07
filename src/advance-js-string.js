@@ -133,11 +133,32 @@ const myCounter=(str,strSearched)=>{
 }
 console.log(myCounter('my name is noam','m'));
 
+//Arie's regular selution
+const arieCounter=(str,strSearched)=>{
+    let result=0;
+    for(let i=0;i<str.length;i++){
+        i=str.indexOf(strSearched,i);
+        if(i===-1) return 0;
+        result++;
+    }
+    return result;
+}
+console.log(arieCounter('my name is noam','m'));
+
 //Recorsive Solution
 const myCounterRecorsive=(str,strSearched)=>{
     if(str.length<strSearched.length) return 0;
     if(str.slice(0,strSearched.length)===strSearched) return 1+myCounterRecorsive(str.slice(1),strSearched);
     else return  0+myCounterRecorsive(str.slice(1),strSearched);
 }
-console.log(myCounterRecorsive("banana", "ana"));
+console.log(myCounterRecorsive('my name is noam','m'));
 
+//arie's Recorsive Solution
+const arieCounterRecorsive=(str,strSearched)=>{
+    let i=str.indexOf(strSearched);
+    if(i===-1) return 0;
+    return 1+arieCounterRecorsive(str.slice(i+1),strSearched);
+}
+console.log(arieCounterRecorsive('my name is noam','m'));
+
+//drill 06
