@@ -162,10 +162,17 @@ const arieCounterRecorsive=(str,strSearched)=>{
 console.log(arieCounterRecorsive('my name is noam','m'));
 
 //drill 06
-//regular selution
 const myReplace=(str,strToReplace,strReplacment)=>{
+    let i=str.indexOf(strToReplace);
+    if(i===-1) return str;
+    return str.slice(0,i).concat(strReplacment,str.slice(i+strToReplace.length))
+}
+
+//drill 6.5
+//regular selution
+const myReplaceAll=(str,strToReplace,strReplacment)=>{
     let result=str;
-    let i=result.indexOf(strToReplace);
+    let i=result.indexOf(strToReplace); 
     while(i!==-1){
         let st1=result.slice(0,i);
         let st2=result.slice(i+strToReplace.length);
@@ -174,13 +181,14 @@ const myReplace=(str,strToReplace,strReplacment)=>{
     }
     return result;
 }
-console.log(myReplace("my name is noam",'noar','chen'));
+console.log(myReplaceAll("my name is noam and noam and noam",'noam','chen'));
 
 //Recorsive Solution
-const myReplaceRec=(str,strToReplace,strReplacment)=>{
+const myReplaceAllRec=(str,strToReplace,strReplacment)=>{
     let i=str.indexOf(strToReplace);
     if(i===-1) return str;
     let str1=str.slice(0,i);
     return str1.concat(strReplacment,myReplaceRec(str.slice(i+strToReplace.length),strToReplace,strReplacment));
 }
+console.log(myReplaceAllRec("my name is noam and noam and noam",'noam','chen'));
 
