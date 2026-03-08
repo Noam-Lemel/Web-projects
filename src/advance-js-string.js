@@ -183,12 +183,49 @@ const myReplaceAll=(str,strToReplace,strReplacment)=>{
 }
 console.log(myReplaceAll("my name is noam and noam and noam",'noam','chen'));
 
+//Arie's regular selution
+const arieReplaceAll=(str,strToReplace,strReplacment)=>{
+    while(str.includes(strToReplace))
+        str=str.replace(strToReplace,strReplacment);
+    return str;
+}
 //Recorsive Solution
 const myReplaceAllRec=(str,strToReplace,strReplacment)=>{
     let i=str.indexOf(strToReplace);
     if(i===-1) return str;
     let str1=str.slice(0,i);
-    return str1.concat(strReplacment,myReplaceRec(str.slice(i+strToReplace.length),strToReplace,strReplacment));
+    return str1.concat(strReplacment,myReplaceAllRec(str.slice(i+strToReplace.length),strToReplace,strReplacment));
 }
 console.log(myReplaceAllRec("my name is noam and noam and noam",'noam','chen'));
 
+//Arie's Recorsive Solution
+const arieReplaceAllRec=(str,strToReplace,strReplacment)=>{
+    if(!str.includes(strToReplace)) return str;
+    return arieReplaceAllRec(str.replace(strToReplace,strReplacment),strToReplace,strReplacment);
+}
+console.log("my name is noam and noam and noam".replaceAll('noam','chen'));
+
+//gemini's drill
+const myMax=(arr)=>{
+    if(arr.length<2) return arr[0];
+    let current=arr[0];
+    let maxOfRest=myMax(arr.slice(1));
+    return current>maxOfRest?current:maxOfRest;
+} 
+console.log(myMax([2,8,3]));
+
+//gemini's drill 02
+const myPower=(base,exponent)=>{
+    if(exponent===0) return 1;
+    return base*myPower(base,exponent-1);
+}
+console.log(myPower(2,3));
+
+//gemini's drill 03
+const mySumDigits=(num)=>{
+    if(num<10) return num;
+    let lastNumber=num%10;
+    num=parseInt(num/10);
+    return lastNumber+mySumDigits(num);
+}
+console.log(mySumDigits(126));
