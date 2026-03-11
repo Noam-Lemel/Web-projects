@@ -233,11 +233,10 @@ console.log(mySumDigits(126));
 //drill 07
 //regular selution
 const mySplit=(str,separator)=>{
-    let result=[];
     if(separator==null){
-        result.push(str);
-        return result;
+        return [str];
     }
+    let result=[];
     if(separator===''){
         for(let i=0;i<str.length;i++)
             result.push(str[i]);
@@ -260,16 +259,50 @@ console.log(mySplit("my name is noam"," "));
 
 //Recorsive Solution
 const mySplitRec=(str,separator)=>{
-     if(separator==null){
-       return [str];
-    }
+     if(separator==null) return [str];
     if(separator===''){
         if(str==='') return[];
-        return [str[0]].concat(mySplitRec(str.slice(1),separator));
+            return [str[0]].concat(mySplitRec(str.slice(1),separator));
     }
     let separatorIndex=str.indexOf(separator);
     if(separatorIndex===-1) 
         return [str];
-    return [str.slice(0,separatorIndex)].concat(mySplitRec(str.slice(separatorIndex+separator.length),separator));
+    return [str.slice(0,separatorIndex)].concat(mySplitRec(str.slice(separatorIndex+separator.length),separator)).filter(str=>str!=='');
 }
 console.log(mySplitRec("my name is noam"," "));
+
+//drill 08
+//first try
+const myPermutation=(str)=>{
+    let result=new Set();
+    const getCombination=(remain,current)=>{
+        if(remain.length===0) result.add(current);
+        for(let i=0;i<remain.length;i++){
+            let char=remain[i];
+            let nextRemain=remain.slice(0,i)+remain.slice(i+1);
+            getCombination(nextRemain,current+char);
+        }
+    }
+    getCombination(str,"");
+    return [...result];
+}
+console.log(myPermutation('abc'));
+//arie's solution
+const ariePermutation=(str)=>{
+    let strChar=str.split('');
+    let  result=new Set();
+    const getEnumerations=(chars,enumaration)=>{
+        if(chars.length===0) result.add(enumaration);
+        else{
+            for(let i=0;i<chars.length;i++){
+                let newChars=[...chars];
+                let char=newChars.splice(i,1);
+                let newenumaration=enumaration+char;
+                getEnumerations(newChars,newenumaration);
+            }
+        }
+    }
+    getEnumerations(strChar,"");
+    return [...result];
+}
+console.log(ariePermutation('abc'));
