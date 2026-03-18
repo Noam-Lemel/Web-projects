@@ -1,0 +1,15 @@
+*{
+    box-sizing: border-box;
+}
+.red{
+    background: red;
+}
+.blue{
+    background: blue;
+}
+.white{
+    background: white;
+}
+.input-focus{
+    border: 2px solid blue;
+}

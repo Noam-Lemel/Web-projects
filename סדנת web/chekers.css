@@ -1,0 +1,22 @@
+*{
+    box-sizing: border-box;
+}
+.board{
+    display: flex;
+    height: 80vh;
+    width: 80vh;
+    outline: 5px solid black;  
+    margin: 20px auto;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.black{
+     height:10vh;
+    width: 10vh;
+    background: black;
+}
+.white{
+     height:10vh;
+    width: 10vh;
+    background: white;
+}

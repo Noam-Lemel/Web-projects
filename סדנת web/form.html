@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms example</title>
+    <link rel="stylesheet" href="./forms.css">
+</head>
+<body>
+    <form action="./selectors.html" method="post">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="enter your name"/>
+         <label for="age">Age</label>
+        <input type="number" name="age" id="age" placeholder="enter your age"/>
+         <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="enter your password"/>
+         <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="enter your email"/>
+        <label for="birthday">birthday</label>
+        <input type="date" name="birthday" id="birthday"/>
+        <div>
+            <input class="inline-block" type="radio" name="gender" id="gender-male" value="male"/>
+            <label class="inline-block" for="gender-male">male</label>
+            <input class="inline-block" type="radio" name="gender" id="gender-female" value="female"/>
+            <label class="inline-block" for="gender-female">female</label>
+        </div>
+        <select name="gender2" id="select-gender">
+            <option value="male">male</option>
+            <option value="female">female</option>
+        </select>
+        <button type="button" onclick="alert('i was clicked')">click on me</button>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

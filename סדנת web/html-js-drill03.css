@@ -1,0 +1,15 @@
+body{
+    margin: 0;
+}
+.box{
+    height: 100px;
+    width: 100px;
+    outline: 5px solid black;
+    margin: 20px;
+}
+.green{
+    background: green;
+}
+.yellow{
+    background: yellow;
+}

@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+.flexbox-container{
+    padding: 5px;
+    margin: 20px auto;
+    width: 40%;
+    min-height: 500px;
+    outline: 5px solid black;
+    display: flex;
+
+    flex-direction: column;
+    flex-direction: column-reverse;
+    flex-direction:row-reverse;
+
+    /* flex-direction:row;
+    justify-content: left;
+    justify-content:right;
+    justify-content:center;
+    justify-content: space-between; */
+
+    flex-direction:row;
+    flex-wrap: wrap;
+    align-content: space-around;
+}
+.box{
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+}
+.blue{
+    background: blue;
+}
+.red{
+    background: red;
+    align-self:flex-start;
+}
+.yellow{
+    background: yellow;
+}

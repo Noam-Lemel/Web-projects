@@ -1,0 +1,84 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr 60px;
+    grid-template-areas: 
+    "m"
+    "i";
+}
+.messages{
+    grid-area: m;
+    outline: 2px solid black;
+    background: gray;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    padding: 10px;
+    overflow-y: auto;
+}
+.input-box{
+   display: block;
+    border: 2px solid black;
+    grid-area: i;
+    padding: 8px;
+}
+input{
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+}
+button{
+    display: none;
+}
+.nav{
+    display: none;
+}
+.message{
+    max-width: 70%;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10%;
+}
+.my{
+ background: green;
+ align-self: flex-start;
+}
+.his{
+ background: blue;
+align-self:flex-end ;
+}
+@media(min-width:40rem){
+.container{
+    width: 100vw;
+    height: 100vh;
+    grid-template-rows: 1fr 60px;
+    grid-template-columns: 1fr 7fr;
+    grid-template-areas: 
+    "n m"
+    "n i";
+}
+.nav{
+    display: block;
+    grid-area: n;
+    margin-top: 5px;
+}
+.nav-contact{
+    height: 10%;
+    width: 100%;
+    border: 2px solid black;
+}
+.input-box{
+    display: grid;
+    grid-template-columns: 80% 20%;
+}
+button{
+    display: block;
+}
+}

@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;
+}
+ .circles-container{
+    height: 40vh;
+    width: 70vw;
+    margin: 70px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+} 
+.circle{
+    height:100px;
+    width: 100px;
+    justify-self: center;
+    align-self: center;
+    border-radius: 50%;
+    outline: 5px solid black;
+    background: blue;
+    margin: 5px;
+}
+.none{
+    display: none;
+}
